@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input_getting</title>
+</head>
+<body>
+    <p>Amazon Shipping Calculator</p>
+    <input  placeholder="enter num" class="one-class" onkeydown="console.log('typing...');">
+    <button
+    onclick="justClick()" > add</button>
+    <p>the total sum  you have to pay :</p>
+
+    <script>
+        function justClick(){
+            let a = Number(document.querySelector('.one-class').value)
+            if( a > 50){
+                document.body.innerHTML=`the total sum  you have to pay : ${a} only`
+            }
+            else if( a < 50){
+                a=a+10
+                document.body.innerHTML=`the total sum  you have to pay : ${a} only`
+            }
+        }
+    </script>
+    
+</body>
+</html>

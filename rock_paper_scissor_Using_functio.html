@@ -12,17 +12,26 @@
     <button onClick="playergame('Rock');">Rock</button>
     <button onClick="playergame('Paper');">Paper</button>
     <button onClick="playergame('scissors');">Scissors</button>
+    <p class="js-score"></p>
+    <p class="js-result"></p>
     <button onclick="score.wins=0;
                     score.losses=0;
-                    score.ties=0; ">RESET</button>
-
+                    score.ties=0; 
+                    UpdateScore();
+                    ">RESET</button>
+    
 
     <script>
+         
+
+
         const score={
             wins:0,
             losses:0,
             ties:0
         };
+       
+
         function playergame(playerMove){
 
             const ComputerMove=pickComputerMove();
@@ -77,14 +86,17 @@
             score.ties += 1;
          }
          
-
-
-         alert(`you picked ${playerMove }. computer picked ${ComputerMove}.you ${result}.
-          Total wins ${score.wins}.Total Losses ${score.losses}.total tie ${score.ties}`);
+          
+         UpdateScore();
+        document.querySelector('.js-result').innerHTML =`Computer picked : ${ComputerMove}-you picked : ${playerMove}`;
+        
 
         }
 
-
+        function UpdateScore(){
+            document.querySelector('.js-score')
+         .innerHTML=`Total wins ${score.wins}.Total Losses ${score.losses}.total tie ${score.ties}`;
+        }
         function pickComputerMove(){
             let randomNumber = Math.random();
            

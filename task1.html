@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function loginSystem() {
+            const correctUsername = "admin";
+            const correctPassword = "1234";
+            let attempts = 3;
+
+            for (let i = 1; i <= attempts; i++) {
+                let username = prompt("Enter username:");
+                let password = prompt("Enter password:");
+
+                if (username === correctUsername && password === correctPassword) {
+                    alert(" Login successful! Welcome, " + username);
+                    break;
+                } else {
+                    let remaining = attempts - i;
+                    if (remaining > 0) {
+                        alert("Incorrect login. Attempts left: " + remaining);
+                    } else {
+                        alert("Account locked. Too many failed attempts.");
+                    }
+                }
+            }
+        }
+
+    
+        loginSystem();
+    </script>
+</body>
+</html>

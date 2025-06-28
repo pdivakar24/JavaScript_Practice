@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todolist</title>
+</head>
+<body>
+    <p>Add to do list</p>
+    <input placeholder="just adding" class="get-Input">
+    <input type="date" placeholder="just_date">
+    <button onclick="myfunc()">Add</button>
+    <div class="div-js"> </div>
+   
+
+
+    <script>
+        let todoArr=[];
+
+        function callToaddtodo(){
+            
+        let todoListhtml="";
+        for(let i=0;i<todoArr.length; i++){
+            let todo= todoArr[i];
+            let html =`<p>
+                    ${todo}
+                    <button
+                        onclick="
+                            todoArr.splice(${i},1);
+                            callToaddtodo();
+                    ">delete</button> 
+                    </p>`;
+            todoListhtml +=html;
+        }
+    
+        document.querySelector(".div-js").innerHTML=todoListhtml;
+       // console.log(todoListhtml);
+    }
+        function myfunc(){
+            let a =document.querySelector('.get-Input').value;
+            todoArr.push(a);
+            callToaddtodo();
+
+        }
+    
+    </script>
+</body>
+</html>

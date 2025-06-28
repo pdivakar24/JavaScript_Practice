@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Single Click Radio</title>
+</head>
+<body>
+
+  <h3>Choose your option (only once):</h3>
+
+  <label>
+    <input type="radio" name="option" value="A" onclick="disableRadios(this)"> Option A
+  </label><br>
+
+  <label>
+    <input type="radio" name="option" value="B" onclick="disableRadios(this)"> Option B
+  </label><br>
+
+  <label>
+    <input type="radio" name="option" value="C" onclick="disableRadios(this)"> Option C
+  </label><br>
+
+  <script>
+    function disableRadios(selected) {
+      let radios = document.getElementsByName("option");
+
+      for (let i = 0; i < radios.length; i++) {
+        radios[i].disabled = true;
+      }
+
+      selected.disabled = false;  // Keep the one clicked enabled
+      alert(`You just clicked: ${selected.value}`);
+    }
+  </script>
+
+</body>
+</html>

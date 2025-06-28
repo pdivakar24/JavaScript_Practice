@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Password Strength Validator</h2>
+    <button onclick="checkPassword()">Check Password</button>
+
+    <script>
+        function checkPassword() {
+            const password = prompt("Enter your password:");
+
+            const minLength = password.length >= 8;
+            const hasUppercase = /[A-Z]/.test(password);
+            const hasNumber = /[0-9]/.test(password);
+            const hasSpecialChar = /[^A-Za-z0-9]/.test(password);
+
+            if (minLength && hasUppercase && hasNumber && hasSpecialChar) {
+                alert(" Password is strong!");
+            } else {
+                let message = " Weak password! Make sure it includes:\n";
+                if (!minLength) {
+                    message += "- At least 8 characters\n";
+                }
+                if (!hasUppercase) {
+                    message += "- At least one uppercase letter\n";
+                }
+                if (!hasNumber){
+
+                 message += "- At least one number\n";
+                }
+                if (!hasSpecialChar){
+
+                message += "- At least one special character\n";}
+                alert(message);
+            }
+        }
+    </script>
+</body>
+</html>
