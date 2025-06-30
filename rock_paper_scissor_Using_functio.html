@@ -19,6 +19,7 @@
                     score.ties=0; 
                     UpdateScore();
                     ">RESET</button>
+    <button onclick="autoplay()">Auto Play</button>
     
 
     <script>
@@ -30,7 +31,13 @@
             losses:0,
             ties:0
         };
-       
+        function autoplay(){
+            setInterval( function(){
+            const playerMove = pickComputerMove();
+            playergame(playerMove);
+            },3000);
+        }
+    
 
         function playergame(playerMove){
 

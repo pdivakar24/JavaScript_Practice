@@ -25,10 +25,83 @@
 
         document.body.innerHTML();
         document.querySelector().innerHTML='';
-    */
+  
    document.write('heelo guyd');
    console.log(document.querySelector('.js-class').innerHTML);
-      console.log(document.querySelector('button').innerHTML= 'myButton')
+      console.log(document.querySelector('button').innerHTML= 'myButton')  
+
+ const arr=[1,2,3,4];
+ const arr1=arr;
+ arr1.push(4);
+ console.log(arr)
+ console.log(arr1)
+ console.log(typeof null);
+
+
+  const va = {
+     ty1 : 'iceCream',
+     ty2 : function myfunc(){
+        console.log('Call my Icecraem')
+     }
+  }
+ va.ty2();
+
+
+ 
+ const regularFunction = function(){
+     console.log('from regular Function');
+ } 
+ 
+console.log(regularFunction());
+
+
+const sregularFuction =()=>{
+    console.log('from arrow function');
+}
+
+console.log(sregularFuction); 
+
+function ()
+()=>
+
+ [ 
+    'divakr',
+    'sujith',
+    20,
+    19
+ ].forEach(( value,index) => {
+    console.log(index);
+        console.log(value);
+ })
+
+ document.body.addEventListener('keydown',(event)=>{
+    console.log(event.key);
+ })*/
+
+
+console.log([-1,2,3,4,-5].filter((value,index)=>{
+    if(value >= 0){
+      return true;
+    }
+    else {
+        return false;
+    }
+}))
+
+
+console.log(typeof filter())
+
+
+ 
+
+
+
+
+
+
+
+
+
     </script>
 </body>
 </html>
