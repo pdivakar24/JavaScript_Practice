@@ -7,6 +7,7 @@
 </head>
 <body>
     <button class="btnclk">click me</button>
+    <p id="mypara">a</p>
     <script>
     /*    function  function1(){
             console.log('hello');
@@ -59,7 +60,16 @@
 
 
 
+//doc
+        let a=10;
+        
+       
 
+    document.querySelector('.btnclk').addEventListener('click',()=>{
+    a++;
+    documnet.getElementById('mypara').style.fontSize =a+'px';
+
+ })
 
 
 

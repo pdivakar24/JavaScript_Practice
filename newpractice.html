@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Functions_Practice</title>
+</head>
+<body>
+  <button class="btnclk">Click me</button>
+  <p id="mypara">a</p>
+
+  <script>
+    let a = 10; // Start with a font size of 10px
+
+    document.querySelector('.btnclk').addEventListener('click', () => {
+      a++;
+      document.getElementById('mypara').style.fontSize = a + 'px';
+    });
+  </script>
+</body>
+</html>
